@@ -1,6 +1,6 @@
 function CreateTodoButton(){
     return(
-        <button>Crear nueva tarea</button>
+        <button>+</button>
     );
   }
 
