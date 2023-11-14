@@ -2,10 +2,11 @@ import React from 'react';
 import './TodoSearch.css';
 import react from 'react';
 
-function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState('');
-  console.log('Los usuarios buscan ToDos de: ' + searchValue);
-
+function TodoSearch({
+  searchValue,
+  setSearchValue
+}) {
+ 
   return (
     <input
       placeholder="Cortar cebolla"
