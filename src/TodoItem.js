@@ -1,8 +1,9 @@
 import './TodoItem.css';
+import {CompleteIcon} from './CompleteIcon'
+import {DeleteIcon} from './DeleteIcon'
 
-function TodoItem(props) {
-  return (
-    <li className="TodoItem">
+
+/*{ <li className="TodoItem">
       <span 
         className={`Icon Icon-check ${props.
         completed && "Icon-check--active"}`}
@@ -20,8 +21,41 @@ function TodoItem(props) {
         >
         X
       </span>
+    </li>}
+     */
+
+    // function TodoItem({text, done, onComplete, onDelete}) {
+      //   return (
+      //     <li className="TodoItem">
+      //       <CompleteIcon
+      //       done={done}
+      //       onClick={onComplete}
+      //       />
+      //       <p className={done ? 'todoItem-p--completed' : ''}>{text}</p>
+      //       <DeleteIcon 
+      //         onClick={onDelete}
+      //       />
+      //     </li>
+          
+      //   );
+      // }
+
+
+function TodoItem({text, done, onComplete, onDelete}) {
+  return (
+    <li className="TodoItem">
+      <CompleteIcon
+    
+      />
+      <p className={done ? 'todoItem-p--completed' : ''}>{text}</p>
+      <DeleteIcon     
+      />
     </li>
+    
   );
 }
+
+
+
 
 export { TodoItem };
