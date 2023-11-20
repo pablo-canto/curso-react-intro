@@ -1,28 +1,14 @@
-import React from 'react'
-import {ImRadioChecked, ImRadioUnchecked} from 'react-icons/im'
-import { TodoIcon } from './TodoIcon'
+import React from 'react';
+import { TodoIcon } from './TodoIcon';
 
-
-// function CompleteIcon ({done, onClick}) {
-//   const iconSelected = done? <ImRadioChecked/> : <ImRadioUnchecked/>
-//   return(
-//     <span 
-//           className= {done ? 'span-icon-done' : 'span-icon-uncompleted' } 
-//           onClick={onClick}>
-//           {iconSelected}
-//     </span>
-
-//   )
-// }
-
-
-function CompleteIcon () {
+function CompleteIcon ({completed, onComplete}) {
   return(
     <TodoIcon
     type = "check"
-    color = "gray"
+    color={completed ? "green" : "gray"}
+    onClick = {onComplete}
     />
-  )
+  );
 }
 
 export {CompleteIcon};

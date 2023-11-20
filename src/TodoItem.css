@@ -15,35 +15,25 @@
     line-height: 24px;
     font-weight: 400;
   }
-  .TodoItem-p--complete {
-    text-decoration: line-through;
-  }
-  
-  .Icon {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 48px;
-    width: 48px;
-    font-size: 24px;
-    font-weight: bold;
-    /* background-color: #CCC; */
-  }
-  
-  .Icon-check {
+
+.TodoItem-p--complete {
+  text-decoration: line-through;
+}
+
+  .span-icon-done{
+    color: rgb(255,98,98);
     position: absolute;
-    left: 12px;
+    font-size: 1.5rem;
+    right: -30px;
+    top: -30px;    
   }
-  .Icon-check--active {
-    color: #4caf50;
+
+  .span-icon-done{
+    color: rgb(21,255,0);
   }
-  
-  .Icon-delete {
-    position: absolute;
-    top: -24px;
-    right: 0;
+
+  .span-icon-uncompleted{
+    color: rgb(164,165,164);
   }
-  .Icon-delete:hover {
-    color: red;
-  }
+
+

@@ -1,6 +1,7 @@
-import './TodoItem.css';
 import {CompleteIcon} from './CompleteIcon'
 import {DeleteIcon} from './DeleteIcon'
+import './TodoItem.css';
+
 
 
 /*{ <li className="TodoItem">
@@ -24,38 +25,46 @@ import {DeleteIcon} from './DeleteIcon'
     </li>}
      */
 
-    // function TodoItem({text, done, onComplete, onDelete}) {
-      //   return (
-      //     <li className="TodoItem">
-      //       <CompleteIcon
-      //       done={done}
-      //       onClick={onComplete}
-      //       />
-      //       <p className={done ? 'todoItem-p--completed' : ''}>{text}</p>
-      //       <DeleteIcon 
-      //         onClick={onDelete}
-      //       />
-      //     </li>
-          
-      //   );
-      // }
+   
 
 
-function TodoItem({text, done, onComplete, onDelete}) {
+// function TodoItem({props, done, onComplete, onDelete}) {
+//   return (
+//     <li className="TodoItem">
+//       <CompleteIcon
+//         completed={props.completed}
+//         //onComplete={props.onComplete}
+//       />
+//      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+//         {props.text}
+//       </p>
+      
+//       <DeleteIcon     
+//         onDelete={props.onDelete}
+//         />
+//     </li>
+    
+//   );
+// }
+
+function TodoItem(props) {
   return (
     <li className="TodoItem">
       <CompleteIcon
-    
+        completed={props.completed}
+        onComplete={props.onComplete}
       />
-      <p className={done ? 'todoItem-p--completed' : ''}>{text}</p>
-      <DeleteIcon     
+
+      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+        {props.text}
+      </p>
+
+      <DeleteIcon
+        onDelete={props.onDelete}
       />
     </li>
-    
   );
 }
-
-
 
 
 export { TodoItem };
