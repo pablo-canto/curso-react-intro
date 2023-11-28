@@ -1,25 +1,6 @@
-import logo from '../platzi.webp';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
+import { AppUI } from './AppUI';
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
-
-
-// const defaultTodos = [
-//   {text: 'Cortar cebolla', completed: true},
-//   {text: 'Tomar el curso de intro a React.js', completed: false},
-//   {text: 'Llorar con la Llorona', completed: false},
-//   {text: 'Lalala', completed: false},
-//   {text: 'Usar Estados derivados', completed: true},
-// ]
-
-// localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos));
-
-// localStorage.removeItem('TODOS_V1');
-
 
 function App() {  
   //const [todos, setTodos] = React.useState(defaultTodos);
@@ -34,10 +15,6 @@ function App() {
       return todoText.includes(searchText);
     }
   );
-
- 
-
-
 
  const completeTodo = (text) => {
   const newTodos = [...todos];
@@ -57,32 +34,18 @@ function App() {
   saveTodos(newTodos);
  };
 
- 
-  return (
-    <>
-      <TodoCounter completed={completedTodos} total={totalTodos}/>
-      <TodoSearch
-       searchValue = {searchValue}
-       setSearchValue = {setSearchValue}
-      />
-
-      <TodoList>
-       {searchedTodos.map(todo => (
-        <TodoItem 
-           key={todo.text} 
-           text = {todo.text}
-           completed = {todo.completed}
-           onComplete={() => completeTodo(todo.text)}
-           onDelete={() => deleteTodo(todo.text)}
-        />
-       ))}
-       {}
-      </TodoList>
-
-      <CreateTodoButton/> 
-
-    </>
-  );
+ return(
+  <AppUI
+  completedTodos = {completedTodos}
+  totalTodos = {totalTodos}
+  searchValue = { searchValue}
+  setSearchValue = {setSearchValue}
+  searchedTodos = {searchedTodos}
+  completeTodo = {completeTodo}
+  deleteTodo = {deleteTodo}
+  />
+ );
+  
 }
 
 
