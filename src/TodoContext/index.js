@@ -4,7 +4,6 @@ import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext =  React.createContext();
 function TodoProvider ({ children }){
-
     //const [todos, setTodos] = React.useState(defaultTodos);
 const {
     item: todos, 
@@ -24,6 +23,15 @@ const {
       return todoText.includes(searchText);
     }
   );
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed:false
+    });  
+    saveTodos(newTodos);
+  }
 
  const completeTodo = (text) => {
   const newTodos = [...todos];
@@ -54,6 +62,7 @@ const {
             setSearchValue,
             searchedTodos,
             completeTodo,
+            addTodo,
             deleteTodo,
             openModal,
             setOpenModal,
